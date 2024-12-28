@@ -1,0 +1,41 @@
+{
+  "name": "agency-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@mui/icons-material": "^6.2.0",
+    "next": "^14.1.0",
+    "next-videos": "^1.4.1",
+    "openai": "^4.77.0",
+    "rc-drawer": "^6.4.1",
+    "react": "^18.3.1",
+    "react-chatbot-kit": "^2.2.2",
+    "react-dom": "^18.3.1",
+    "react-icons": "^4.12.0",
+    "react-modal": "^3.16.3",
+    "react-multi-carousel": "^2.8.5",
+    "react-router-dom": "^7.0.2",
+    "react-scroll": "^1.9.0",
+    "react-slick": "^0.30.2",
+    "react-stickynode": "^4.1.0",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^9.4.1",
+    "theme-ui": "^0.16.2"
+  },
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "url-loader": "^4.1.1"
+  }
+}
