@@ -18,9 +18,6 @@ const MonChatbot = () => {
         <div>
             {isOpen && (
                 <div style={styles.chatbotContainer}>
-                    <div style={styles.chatbotHeader}>
-                        <h3 style={{ margin: 0 }}>Conversation avec MarketingBot</h3>
-                    </div>
                     <Chatbot
                         config={config}
                         messageParser={MessageParser}
@@ -38,21 +35,18 @@ const MonChatbot = () => {
 const styles = {
     chatbotContainer: {
         position: 'fixed',
-        bottom: '6px',
-        right: '20px',
-        width: '300px',
+        bottom: '30px',
+        right: '90px',
+        width: '276px', // Ajuster la largeur au contenu
+        height: '501px', // Ajuster la hauteur pour un design compact
         border: '1px solid #ccc',
         borderRadius: '10px',
         boxShadow: '0 0 15px rgba(0,0,0,0.3)',
         backgroundColor: '#fff',
-        zIndex: 1000,
-    },
-    chatbotHeader: {
-        backgroundColor: '#c5a86e',
-        color: 'white',
-        padding: '10px',
-        borderTopLeftRadius: '10px',
-        borderTopRightRadius: '10px',
+        zIndex: 5000,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center', // Centrer verticalement
     },
 };
 

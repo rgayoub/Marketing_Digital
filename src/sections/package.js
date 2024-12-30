@@ -188,6 +188,11 @@ export default function Package() {
                   whiteSpace: 'nowrap',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
+                  "@media screen and (max-width: 780px)": {
+                    whiteSpace: 'unset',
+                    overflow: 'unset',
+                    textOverflow: 'unset',
+                  },
                 },
               }}
           />

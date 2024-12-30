@@ -1,6 +1,6 @@
 export default [
   {
-    path: 'header',
+    path: 'home',
     label: 'Accueil',
   },
   {

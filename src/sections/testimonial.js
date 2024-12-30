@@ -13,45 +13,50 @@ import Avatar4 from 'assets/testimonial/avatar4.png';
 const data = [
   {
     id: 1,
-    title: 'Modern look & trending design',
+    title: 'Design de qualité et créativité',
     description:
-      "Obtenez de l'expérience en travaillant avec cette équipe incroyable & à l'avenir souhaitez collaborer ensemble pour des projets prometteurs tout en effectuant un dépôt pour le freelance.",
-    avatar: Avatar1,
-    name: 'Jenny Yellow',
-    designation: '@jenny.ylw',
+      "Offrir des services de design innovants pour rendre vos projets visuellement attrayants et mémorables. Nous nous engageons à transformer vos idées en visuels percutants et modernes.",
+    avatar: Avatar2,
+    name: 'Ahmed El Amrani',
+    designation: '@ahmed.elamrani',
+    email: 'ahmed.elamrani@mail.com',
     review: 5,
   },
   {
     id: 2,
-    title: 'Design Quality & performance',
+    title: 'Création de contenu impactant',
     description:
-      "Acquérir de l'expérience en travaillant avec cette équipe talentueuse et, à l'avenir, collaborer sur des projets prometteurs. De plus, effectuer un dépôt pour le freelance.",
-    avatar: Avatar2,
-    name: 'Jenny Yellow',
-    designation: '@jenny.ylw',
+      "Créer du contenu captivant, engageant et original qui reflète l'image de votre marque et attire l'attention. Nos experts produisent des textes de qualité adaptés à vos besoins spécifiques.",
+    avatar: Avatar1,
+    name: 'Fatima Zahra Benali',
+    designation: '@fatima.z.benali',
+    email: 'fatima.z.benali@mail.com',
     review: 5,
   },
   {
     id: 3,
-    title: 'Layout and organized layers',
+    title: 'Gestion de communauté en ligne',
     description:
-      "Travailler avec cette équipe exceptionnelle pour gagner en expérience et, dans le futur, participer à des projets communs ambitieux. Prévoir aussi un dépôt pour le freelance.",
+      "Optimiser la gestion de vos réseaux sociaux en créant une relation de confiance et en stimulant l'engagement de votre audience. Nous assurons la croissance et la fidélité de votre communauté.",
     avatar: Avatar3,
-    name: 'Jenny Yellow',
-    designation: '@jenny.ylw',
+    name: 'Youssef Berrada',
+    designation: '@youssef.berrada',
+    email: 'youssef.berrada@mail.com',
     review: 5,
   },
   {
     id: 4,
-    title: 'Modern look & trending design',
+    title: 'Production audiovisuelle',
     description:
-     "Gagner de l'expérience avec cette équipe dynamique et, dans l'avenir, réaliser des projets innovants ensemble. De plus, mettre en place un dépôt pour garantir la sécurité du freelance.",
+      "Offrir des solutions de production audiovisuelle de qualité pour tous vos besoins vidéo. Nous créons des vidéos qui captivent et véhiculent efficacement votre message à travers des images et du son.",
     avatar: Avatar4,
-    name: 'Jenny Yellow',
-    designation: '@jenny.ylw',
+    name: 'Yassine El Idrissi',
+    designation: '@yassine.elidrissi',
+    email: 'yassine.elidrissi@mail.com',
     review: 4,
   },
 ];
+
 
 const responsive = {
   desktop: {
@@ -106,10 +111,14 @@ export default function TestimonialCard() {
                            whiteSpace: 'nowrap', // Forcer le texte sur une seule ligne
                            overflow: 'hidden', // Gérer les débordements
                            textOverflow: 'ellipsis', // Ajouter des points de suspension si le texte est trop long
+                           "@media screen and (max-width: 900px)": {
+                              whiteSpace: 'unset',
+                              overflow: 'unset',
+                              textOverflow: 'unset',
+                            },
                          },
                        }}
         />
-
       </Container>
       <Box sx={styles.carouselWrapper}>
         <Carousel
@@ -194,7 +203,7 @@ const styles = {
     },
   },
   reviewCard: {
-    boxShadow: '0px 0px 1px rgba(38, 78, 118, 0.35)',
+    boxShadow: '0px 0px 2px rgba(38, 78, 118, 0.35)',
     transition: 'all 0.3s',
     borderRadius: '6px',
     p: [

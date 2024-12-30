@@ -1,5 +1,5 @@
 'use client'; // Composant côté client
-import React  from "react";
+import React from "react";
 import { Container, Flex, Box } from "theme-ui";
 import { keyframes } from "@emotion/react";
 import { Link } from "react-scroll";
@@ -19,78 +19,55 @@ export default function Header({ className }) {
   };
 
   return (
-      <DrawerProvider>
-        <Box sx={styles.header} className={className} id="header">
-          <Container sx={styles.container}>
-            <Logo src={LogoDark} />
+    <DrawerProvider>
+      <Box sx={styles.header} className={className} id="header">
+        <Container sx={styles.container}>
+          <Logo src={LogoDark} />
 
-            <Flex as="nav" sx={styles.nav}>
-              {menuItems.map(({ path, label }, i) => (
-                  label === "Accueil" ? (
-                      <a
-                          key={i}
-                          onClick={(e) => {
-                            e.preventDefault(); // Empêche le comportement par défaut du lien
-                            window.location.href = "/"; // Recharge la page Accueil
-                          }}
-                          className="accueil"
-                          style={{ cursor: "pointer", color: "black" }}
-                      >
-                        {label}
-                      </a>
-                  ) : (
-                      <Link
-                          activeClass="active"
-                          to={path}
-                          spy={true}
-                          smooth={true}
-                          offset={-70}
-                          duration={500}
-                          key={i}
-                          className={
-                            label === "Qui sommes-nous" ? "qui-sommes-nous" :
-                                label === "Nos services" ? "nos-services" :
-                                    label === "Nos réalisations" ? "nos-realisations" : ""
-                          }
-                      >
-                        {label}
-                      </Link>
-                  )
-              ))}
-            </Flex>
+          <Flex as="nav" sx={styles.nav}>
+            {menuItems.map(({ path, label }, i) => (
+              label === "Accueil" ? (
+                <a
+                  key={i}
+                  onClick={(e) => {
+                    e.preventDefault(); // Empêche le comportement par défaut du lien
+                    window.location.href = "/"; // Recharge la page Accueil
+                  }}
+                  className="accueil"
+                  style={{ cursor: "pointer" }}
+                >
+                  {label}
+                </a>
+              ) : (
+                <Link
+                  activeClass="active"
+                  to={path}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  key={i}
+                  className={label === "Qui sommes-nous" ? "qui-sommes-nous" : ""}
+                >
+                  {label}
+                </Link>
+              )
+            ))}
+          </Flex>
 
-            <div style={{ textAlign: "center", margin: "20px 0" }}>
-              <button
-                  className="donate__btn"
-                  onClick={handleContactClick}
-                  style={{
-                    padding: "12px 24px",
-                    backgroundColor: "#fff",
-                    color: "black",
-                    border: "2px solid white",
-                    cursor: "pointer",
-                    borderRadius: "5px",
-                    fontSize: "16px",
-                    fontWeight: "500",
-                    transition: "background-color 0.3s, color 0.3s",
-                  }}
-                  onMouseOver={(e) => {
-                    e.target.style.backgroundColor = "#b7934c"; // Fond marron au survol
-                    e.target.style.color = "#fff"; // Texte blanc au survol
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.backgroundColor = "#fff"; // Retour à l'arrière-plan blanc
-                    e.target.style.color = "black"; // Retour au texte noir
-                  }}
-              >
-                Contactez-nous
-              </button>
-            </div>
+          <div style={{ textAlign: "center", margin: "20px 0" }}>
+            <button
+              className="donate__btn"
+              onClick={handleContactClick}
+            >
+              Contactez-nous
+            </button>
+          </div>
 
-            <MobileDrawer />
-          </Container>
-        </Box>
-      </DrawerProvider>
+          <MobileDrawer />
+        </Container>
+      </Box>
+    </DrawerProvider>
   );
 }
 
@@ -122,9 +99,22 @@ const styles = {
     transition: "all 0.4s ease",
     animation: `${positionAnim} 0.4s ease`,
     ".donate__btn": {
-      flexShrink: 0,
-      mr: [15, 20, null, null, 0],
-      ml: ["auto", null, null, null, 0],
+      padding: "12px 24px",
+      backgroundColor: "#b7934c",
+      color: "#fff",
+      border: "2px solid white",
+      cursor: "pointer",
+      borderRadius: "20px",
+      fontSize: "16px",
+      fontWeight: "500",
+      transition: "transform 0.3s ease, background-color 0.3s ease, color 0.3s ease",
+      "&:hover": {
+        transform: "scale(1.1)", // Augmente la taille du bouton
+        backgroundColor: "#d4a65a", // Change légèrement la couleur de fond
+      },
+      "@media screen and (max-width: 1040px)": {
+  display: "none", // Cache le bouton sur les écrans de largeur < 1040px
+},
     },
     "&.sticky": {
       position: "fixed",
@@ -142,16 +132,8 @@ const styles = {
   nav: {
     mx: "auto",
     display: "none",
-    "@media screen and (min-width: 1024px)": {
+    "@media screen and (min-width: 1040px)": {
       display: "block",
-    },
-    logo: {
-      height: "200px", // Ajuste la hauteur du logo
-      width: "auto", // Maintient les proportions
-      border:"2px solid black",
-      "@media screen and (min-width: 1024px)": {
-        height: "80px", // Taille plus grande sur grand écran
-      },
     },
     a: {
       fontSize: 2,
@@ -162,25 +144,15 @@ const styles = {
       transition: "all 0.15s",
       color: "black", // Couleur noire par défaut pour tous les liens
       "&:hover": {
-        color: "#8B4513", // Marron au survol
+        color: "#b7934c", // Marron au survol
       },
       "&.active": {
-        color: "#8B4513", // Marron lorsque l'élément est actif
+        color: "#b7934c", // Marron lorsque l'élément est actif
       },
     },
     ".accueil": {
-      color: "#8B4513", // Couleur noire pour Accueil par défaut
       "&.active": {
-        color: "#b7934c", // Marron plus clair quand "Accueil" est actif
-      },
-    },
-    ".qui-sommes-nous, .nos-services, .nos-realisations": {
-      color: "black", // Couleur noire par défaut
-      "&:hover": {
-        color: "#8B4513", // Marron au survol
-      },
-      "&.active": {
-        color: "#8B4513", // Marron lorsque ces liens sont actifs
+        color: "#b7934c", // Marron clair quand "Accueil" est actif
       },
     },
   },

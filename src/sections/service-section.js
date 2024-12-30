@@ -1,7 +1,7 @@
 import { Container, Box } from 'theme-ui';
 import TextFeature from '../components/text-feature';
 import FeatureThumb from '../assets/herdesignervideo.mp4'; // Importer le fichier vidéo
-import shapePattern from '../assets/shape-pattern2.png';
+// import shapePattern from '../assets/shape-pattern2.png';
 
 const data = {
   subTitle: 'Qui sommes-nous',
@@ -31,9 +31,6 @@ export default function CoreFeature() {
                 controls
                 style={styles.video}
             />
-            <Box sx={styles.shapeBox}>
-              {/*<img src={shapePattern} alt="Shape" />*/}
-            </Box>
           </Box>
         </Container>
       </Box>
@@ -62,13 +59,16 @@ const styles = {
   thumbnail: {
     display: 'inline-flex',
     position: 'relative',
-    mr: 'auto',
+    mr: '20px',
     ml: ['auto', null, null, null, 7],
     '> video': {
       position: 'relative',
       zIndex: 1,
       height: [310, 'auto'],
       width: '120%', // Ajuster la largeur selon vos besoins
+    },
+    "@media screen and (max-width: 850px)": {
+      mr: "70px",
     },
   },
   shapeBox: {

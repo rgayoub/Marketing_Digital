@@ -15,7 +15,7 @@ export default function Subscribe() {
         {/* Bouton "Subscribe" avec icône Instagram */}
         <Button
           sx={styles.subscribeBtn}
-          onClick={() => window.open('https://www.instagram.com/herdeesigner?igsh=bHdxaDV6dmgzamty', '_blank')}
+          onClick={() => window.open('https://www.instagram.com/herdeesigner', '_blank')}
         >
           <FaInstagram sx={styles.icon} /> Abonnez-vous
         </Button>
@@ -26,16 +26,18 @@ export default function Subscribe() {
 
 const styles = {
   contentBox: {
-    backgroundColor: 'rgba(153, 102, 0, 0.57)', 
+    backgroundColor: 'rgba(153, 102, 0, 0.57)',
     textAlign: 'center',
     borderRadius: 12,
     py: ['40px', '50px', '60px'],
     px: [3, 4],
-    boxShadow: '0px 10px 20px #b7934c', // Ombre subtile
+    margin: '10px',
+    boxShadow: '0px 10px 20px #b7934c',
     transition: 'all 0.3s ease-in-out',
-    '&:hover': {
-      backgroundColor: 'rgba(153, 102, 0, 0.57)', 
-    },
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '70vh', // Centre verticalement
   },
   contentBoxInner: {
     width: ['90%', '85%', '75%', '70%'],
@@ -60,23 +62,66 @@ const styles = {
     mx: 'auto',
   },
   subscribeBtn: {
-    backgroundColor: '#fff',  // Bouton blanc
-    color: 'black', // Texte marron foncé
+    background: 'linear-gradient(135deg, #fff, #f5e8dc)', // Dégradé blanc et beige
+    color: '#3e2723', // Texte marron foncé
     py: '14px',
     px: '30px',
     fontSize: ['16px', '18px'],
     fontWeight: '600',
     borderRadius: '50px',
     letterSpacing: '1px',
-    display: 'flex', // Permet d'aligner l'icône et le texte
+    display: 'inline-flex', // Pour centrer l'icône et le texte
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '10px', // Espacement entre l'icône et le texte
-    transition: 'all 0.3s ease-in-out',
+    gap: '10px', // Espace entre l'icône et le texte
+    margin: '0 auto', // Centre horizontalement
+    position: 'relative',
+    overflow: 'hidden', // Nécessaire pour l'animation
+    boxShadow: '0 8px 15px rgba(0, 0, 0, 0.1)', // Ombre élégante
+    transition: 'all 0.4s ease', // Transitions fluides
+    textAlign: 'center',
+    zIndex: 1,
+  
+    // Effets au survol
     '&:hover': {
-      backgroundColor: '#f5f5f5', // Effet de survol gris clair
+      background: 'linear-gradient(135deg, #f5e8dc, #fff)', // Inversion du dégradé
       color: '#3e2723',
-      transform: 'scale(1.05)', // Effet de mise en valeur au survol
+      transform: 'scale(1.1)', // Zoom léger
+      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)', // Ombre plus prononcée
+    },
+  
+    // Animation lumineuse
+    '&:before': {
+      content: '""',
+      position: 'absolute',
+      top: '-50%',
+      left: '-50%',
+      width: '200%',
+      height: '200%',
+      background: 'radial-gradient(circle, rgba(245, 232, 220, 0.4), transparent 70%)',
+      transform: 'scale(0)',
+      transition: 'transform 0.6s ease',
+      zIndex: -1,
+    },
+    '&:hover:before': {
+      transform: 'scale(1)',
+    },
+  
+    // Animation d'ondes lumineuses
+    '&:after': {
+      content: '""',
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      width: '100%',
+      height: '100%',
+      background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(245, 232, 220, 0.3))',
+      transform: 'translateX(-100%)',
+      zIndex: 0,
+      transition: 'all 0.4s ease',
+    },
+    '&:hover:after': {
+      transform: 'translateX(100%)',
     },
   },
   icon: {
