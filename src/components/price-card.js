@@ -188,14 +188,13 @@ export default function PriceCard({
               display: 'inline-flex', // Pour centrer l'icône et le texte
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '10px', // Espace entre l'icône et le texte
               position: 'relative',
               overflow: 'hidden', // Nécessaire pour l'animation
               boxShadow: '0 8px 15px rgba(0, 0, 0, 0.1)', // Ombre élégante
               transition: 'all 0.4s ease', // Transitions fluides
               textAlign: 'center',
               zIndex: 1,
-              width: '300px',
+              maxWidth: '300px',
               
               // Effets au survol
               '&:hover': {
@@ -401,7 +400,7 @@ const modalStyles = {
     width: '90%',
     maxWidth: '500px',
     borderRadius: '20px',
-    border: 'none',
-    padding: 0,
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+    padding: '20px',
   },
 };

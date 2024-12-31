@@ -3,7 +3,7 @@ import SectionHeader from 'components/section-header';
 import PostCard from 'components/post-card.js';
 import ButtonGroup from 'components/button-group';
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css'; // Assurez-vous d'importer les styles
+import 'react-multi-carousel/lib/styles.css'; 
 import PostThumb1 from 'assets/blog/1.jpg';
 import PostThumb2 from 'assets/blog/4.jpeg';
 import { useRouter } from "next/navigation";

@@ -9,7 +9,6 @@ const data = {
   description:
       "Nous sommes une équipe passionnée par ce que nous faisons. Notre mission est de fournir des services de qualité en utilisant les dernières technologies et en apportant une valeur ajoutée à nos clients.",
   btnName: 'Rejoignez-nous',
-  btnURL: '/contact',
 };
 
 export default function CoreFeature() {
@@ -22,7 +21,6 @@ export default function CoreFeature() {
                 title={data.title}
                 description={data.description}
                 btnName={data.btnName}
-                btnURL={data.btnURL}
             />
           </Box>
           <Box sx={styles.thumbnail}>

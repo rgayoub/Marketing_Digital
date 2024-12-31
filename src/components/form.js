@@ -45,28 +45,7 @@ const Contact = () => {
     };
 
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                minHeight: "100vh",
-                backgroundColor: "#f4f4f9",
-                padding: "20px",
-            }}
-        >
-            <div
-                style={{
-                    maxWidth: "600px",
-                    width: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    backgroundColor: "#fff",
-                    borderRadius: "10px",
-                    padding: "26px",
-                    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
-                }}
-            >
+            <div style={{ marginTop: "800px"}}>
                 <div style={{ textAlign: "center", marginBottom: "30px" }}>
                     <h1
                         style={{
@@ -160,8 +139,9 @@ const Contact = () => {
                     </button>
                 </form>
             </div>
-        </div>
     );
 };
 
 export default Contact;
+
+
