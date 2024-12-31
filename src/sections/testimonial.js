@@ -241,7 +241,7 @@ const styles = {
         },
       },
       '.star': {
-        color: 'primary',
+        color: '#b7934c',
         mr: '1px',
       },
       '.star-o': {
@@ -287,7 +287,7 @@ const styles = {
     lineHeight: 1.3,
   },
   designation: {
-    color: 'primary',
+    color: '#b7934c',
     fontWeight: '500',
     fontSize: 1,
     lineHeight: 1.4,

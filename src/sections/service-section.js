@@ -8,7 +8,7 @@ const data = {
   title: 'Découvrez notre équipe et notre mission',
   description:
       "Nous sommes une équipe passionnée par ce que nous faisons. Notre mission est de fournir des services de qualité en utilisant les dernières technologies et en apportant une valeur ajoutée à nos clients.",
-  btnName: 'Rejoindre-nous',
+  btnName: 'Rejoignez-nous',
   btnURL: '/contact',
 };
 
