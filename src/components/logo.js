@@ -1,3 +1,4 @@
+import { Margin } from '@mui/icons-material';
 import { Link } from 'components/link';
 import Image from 'next/image';
 
@@ -9,7 +10,7 @@ export default function Logo({ src, ...rest }) {
         variant: 'links.logo',
         display: 'flex',
         cursor: 'pointer',
-        mr: 15,
+        marginLeft: '-50px',
         zoom: '0.43',
       }}
       {...rest}

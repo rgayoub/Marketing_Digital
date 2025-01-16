@@ -159,7 +159,7 @@ export default function Footer() {
                     </Box>
                     <Box sx={{ marginBottom: '15px' }}>
                       <label style={styles.label}>Message</label>
-                      <textarea placeholder="Votre message" value={message} onChange={(e) => setMessage(e.target.value)} style={{ ...styles.input, height: '100px' }} />
+                      <textarea placeholder="Votre message" value={message} onChange={(e) => setMessage(e.target.value)} style={{ ...styles.input, height: '100px' , fontFamily:'arial'}} />
                     </Box>
                     <Button
                                 onClick={handleSend}

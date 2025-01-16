@@ -46,5 +46,9 @@ export default {
       path: 'realisation',
       label: 'Nos réalisations',
     },
+    {
+      path: 'pricing',
+      label: 'Plan tarifaire',
+    },
   ],
 };

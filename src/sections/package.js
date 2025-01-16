@@ -177,7 +177,7 @@ export default function Package() {
   };
 
   return (
-      <Box id="pricing" sx={{ variant: 'section.pricing' }}>
+      <Box id="pricing" sx={{ variant: 'section.pricing' ,marginTop: '-50px'}}>
         <Container>
           <SectionHeader
               slogan="Plan Tarifaire"

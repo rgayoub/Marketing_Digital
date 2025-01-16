@@ -1,5 +1,5 @@
 'use client'; // Composant côté client
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { Container, Flex, Box , Heading , Button} from "theme-ui";
 import { keyframes } from "@emotion/react";
 import { Link } from "react-scroll";
@@ -35,14 +35,15 @@ export default function Header({ className }) {
     setShowAlert(false); // Ferme le modal
   };
 // Injecter les styles globaux dans l'application
-const injectGlobalStyles = () => {
-  const styleSheet = document.createElement("style");
-  styleSheet.innerText = globalStyles; // Ajoute les styles globaux
-  document.head.appendChild(styleSheet); // Insère l'élément dans le <head>
-};
+useEffect(() => {
+  const injectGlobalStyles = () => {
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = globalStyles; // Ajoute les styles globaux
+    document.head.appendChild(styleSheet); // Insère dans le <head>
+  };
 
-// Appeler la fonction une fois lors du chargement de l'application
-injectGlobalStyles();
+  injectGlobalStyles();
+}, []); 
 
   return (
     <DrawerProvider>
@@ -148,7 +149,7 @@ injectGlobalStyles();
             </Box>
             <Box sx={{ marginBottom: '15px' }}>
               <label style={styles.label}>Message</label>
-              <textarea placeholder="Votre message" value={message} onChange={(e) => setMessage(e.target.value)} style={{ ...styles.input, height: '100px' }} />
+              <textarea placeholder="Votre message" value={message} onChange={(e) => setMessage(e.target.value)} style={{ ...styles.input, height: '100px' , fontFamily:'arial' }} />
             </Box>
             <Button
                         onClick={handleSend}
@@ -282,7 +283,7 @@ const styles = {
         transform: "scale(1.1)", // Augmente la taille du bouton
         backgroundColor: "#d4a65a", // Change légèrement la couleur de fond
       },
-      "@media screen and (max-width: 1040px)": {
+      "@media screen and (max-width: 1150px)": {
   display: "none", // Cache le bouton sur les écrans de largeur < 1040px
 },
     },
@@ -302,7 +303,7 @@ const styles = {
   nav: {
     mx: "auto",
     display: "none",
-    "@media screen and (min-width: 1040px)": {
+    "@media screen and (min-width: 1150px)": {
       display: "block",
     },
     a: {

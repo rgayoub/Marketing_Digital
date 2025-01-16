@@ -161,7 +161,7 @@ const MobileDrawer = () => {
                   </Box>
                   <Box sx={{ marginBottom: '15px' }}>
                     <label style={styles.label}>Message</label>
-                    <textarea placeholder="Votre message" value={message} onChange={(e) => setMessage(e.target.value)} style={{ ...styles.input, height: '100px' }} />
+                    <textarea placeholder="Votre message" value={message} onChange={(e) => setMessage(e.target.value)} style={{ ...styles.input, height: '100px' , fontFamily:'arial'}} />
                   </Box>
                   <Button
                               onClick={handleSend}
@@ -261,7 +261,7 @@ const styles = {
     justifyContent: 'center',
     flexShrink: '0',
     width: '26px',
-    '@media screen and (min-width: 1040px)': {
+    '@media screen and (min-width: 1150px)': {
       display: 'none',
     },
   },
